@@ -38,7 +38,7 @@ class Loader extends PluginBase implements Listener{
     @mkdir($this->getDataFolder());
     $this->config = new Config($this->getDataFolder() . "config.yml" , Config::YAML, Array(
         "InvisibleSystem" => true,
-        "VIPS" => array("RedstoneAlmeida")));
+        "VIPS" => array("nickforvipplayer")));
     }
     
     public function JoinLogin(\pocketmine\event\player\PlayerJoinEvent $event){
