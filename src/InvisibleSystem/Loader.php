@@ -45,7 +45,6 @@ class Loader extends PluginBase implements Listener{
         $invisiblesystem = $this->config->get("InvisibleSystem");
         $vips = $this->config->get("VIPS");
         $player = $event->getPlayer();
-        $player->removeAllEffects();
 
         $player_name = $player->getName();
         
@@ -53,7 +52,9 @@ class Loader extends PluginBase implements Listener{
 
         if(!(in_array($player_name, $vips))) {
 
-          $player->addEffect(Effect::getEffect(14)->setAmplifier(1)->setDuration(20000*20)->setVisible(false));
+          foreach($this->getServer()->getOnlinePlayers() as $p){
+           $p->hidePlayer($player);
+          }
         }
 
       }
